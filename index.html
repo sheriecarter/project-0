@@ -25,11 +25,12 @@
   <h1 class="gametitle" >Racing Game</h1>
   <!-- <img src="girl.png" width="200" height="200" /> -->
 </div>
+<div id="playerWon"><h1> We Have A Winner!!!!!!!!!!!!<h1></div>
 <div class="container">
   <div><div class="playerkey" id="one">Player 1: Your key is A</div><div class="playerkey" id="two"> Player 2: Your key is L </div>
   <!-- <a href=game.html class="btn btn-primary" class="center-block"role="button" id="Begin">Begin</a> -->
 <div id="track">
-<img src=player1.jpg id="player2" class="playerimages">
+<img src=player1.jpg id="player1" class="playerimages" onmouseover="moveRight(this, amountToMoveTotal, amountToMovePerStep, timeToWaitBeforeNextIncrement)" >
 <!-- <script>
 a=newImage()
 a.src=player1.jpg;
@@ -44,8 +45,9 @@ repeat(function(){
 
 </div>
 <div id="track2">
-<img src=player2.jpg id="player2" class="playerimages">
+<img src=player2.jpg id="player2" class="playerimages" onmouseover="moveRight(this, amountToMoveTotal, amountToMovePerStep, timeToWaitBeforeNextIncrement)" >
 </div>
+<button class="btn btn-lg btn-reset" class="tmp-hidden" id="reset">Race Again</button>
 </div>
 
 

@@ -1,59 +1,83 @@
 
 
-// wait for the DOM to finish loading
 $(document).ready(function() {
-  // all code to manipulate the DOM
-  // goes inside this function
 
-  // var topLeft= "topleft"
-  // var 2= "$(#"topmiddle"
-  // var 3="topright"
-  // var 4="middleleft"
-  // var 5="center"
-  // var 6="middleright"
-  // var 7="bottomleft"
-  // var 8="bottommiddle"
-  // var 9="bottomright"
+  var animate;
+  var original = null;
 
-  $(".box").on("click", function designate(event){
-    var clickedBox =$(this)
-    console.log ('box clicked')
+  function moveRight(imgObj, amountToMoveTotal, amountToMovePerStep, timeToWaitBeforeNextIncrement)
+  {
+      //Copy original image location
+      if (original === null){
+          original = parseInt(imgObj.style.left);
+      }
 
-    if (box clicked) {
-      greeting="hello"
-    }
-  });
+      //Check if the image has moved the distance requested
+      //If the image has not moved requested distance continue moving.
+      if (parseInt(imgObj.style.left) < amountToMoveTotal) {
+          imgObj.style.left = (parseInt(imgObj.style.left) + amountToMovePerStep) + 'px';
 
-
-function startGame() {
-  document.turn = "X";
-  <div id="whosturn">Its your turn</div>
-  saywhosturn(document.turn +"play now");
-}
-
-function saywhosturn(message){
-   document.getElementsbyID('message').innertext =message;
-}
-function nextMove(square{
-  square.innterText=document.turn;
-  switchTurn();
-})
-function switchTurn(){
-  if (document.turn = "X"){
-    document.turn = "O";
-
-  } else {
-    document.turn = "X";
+          animate = setTimeout(function(){moveRight(imgObj, amountToMoveTotal, amountToMovePerStep, timeToWaitBeforeNextIncrement);},timeToWaitBeforeNextIncrement);
+      }else {
+          imgObj.style.left = original;
+          original = null;
+          clearTimeout(animate);
+      }
   }
-  setMessage("It's" + document.turn + " 's turn")
-}
-  // $(topleft)
-  // $(topmiddle)
-  // $(topright)
-  // $(middleleft)
-  // $(center)
-  // $(middleright)
-  // $(bottomleft)
-  // $(bottommiddle)
-  // $(bottomright)
-});
+
+
+// // reset
+//   $reset = $('#reset');
+//     $reset = $('#reset');
+//     // back to beginning
+//     var raceAgain = function() {
+//       $reset.addClass('tmp-hidden');
+//       $('.playerimages').css({left: 0});
+//       winner = null;
+//       };
+// // reset button
+//
+// var executeWin = function() {
+//
+//   $reset.removeClass('tmp-hidden');
+//   +  };
+//
+// }
+// //
+//  var movePlayer = function(keypressEvent) {
+//     var keyCode = String.fromCharCode(keypressEvent.keyCode);
+//     var $playerimages = $('[data-key="' + keyCode + '"]');
+//      var leftPosition = $playerimages.offset().left;
+// // Make Player move
+//  $playerimages.css({left: leftPosition + 20});
+//
+// // how to win
+// if ($playerimages.offset().left >= $('#track').width() - $playerimages.width()) {
+//   winner = $player;
+//   winner = $player;
+//    }
+// });
+//
+// // other
+//  var race = function() {
+//    $(window).on('keypress', function(event) {
+//       if (!winner) {
+//          movePlayer(event);
+//        }
+//         });
+//         $reset.on('click', function() {
+//           raceAgain();
+//            });
+//          };
+// // Play
+// race();
+
+//
+// var realwinner =document.getElementbyId("player1");
+// var otherwinner=document.getElementbyId("player2")
+//
+// function determineWinner(endoftrack){
+//   if(elplayer1.style.){
+//     elMsg.textContent="You won";
+//   }
+// }

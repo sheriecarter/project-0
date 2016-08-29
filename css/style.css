@@ -23,6 +23,9 @@ height: 500px;
           margin-bottom: 50px;
           display: block;
         }
+#playerWon{
+  display: none
+}
 #track {background-color: white;
           color: white;
           /*opacity: .7;*/
@@ -45,6 +48,7 @@ height: 500px;
   height: 125px;
   float: left;
   padding: 15px;
+  position: relative;
 }
 /*#next2 {background-color: pink;
                   margin-top: 50px;
@@ -76,6 +80,8 @@ footer { background-color: pink;
   padding: 5px;
   height: 60px;
 }
+.tmp-hidden {
++  display: none;
 /*
 #one {
   text-align: left
