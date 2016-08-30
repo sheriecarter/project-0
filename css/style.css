@@ -17,6 +17,9 @@ background-size: cover;}
 height: 500px;
   /*background: linear-gradient(to left, brown , black)*/
   ;}
+#player1 {
+  positon: relative;
+}
 
 #begin {background-color: pink;
           margin-top: 100px;
@@ -31,7 +34,9 @@ height: 500px;
           /*opacity: .7;*/
           display:block;
           height: 125px;
-        margin-top: 100px;}
+        margin-top: 100px;
+       width: 1000px;
+     }
 #divider {background-color: violet;
                   color: white;
                   /*opacity: .7;*/
